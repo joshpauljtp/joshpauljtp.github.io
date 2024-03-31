@@ -1,0 +1,12 @@
+// Breakpoints
+$mobileBreakpoint: 800px;
+
+// Typography
+$fontSizeClampValue: 7vw;
+
+// Colours
+$activeLinkBackgroundColor: color-mix(
+  in hsl longer hue,
+  var(--bgColor) 60%,
+  white
+);

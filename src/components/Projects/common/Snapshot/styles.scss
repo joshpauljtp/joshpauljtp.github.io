@@ -1,0 +1,57 @@
+@use "../../../../styles/variables" as vars;
+
+.snapshot {
+  display: grid;
+  grid-template-columns: 25fr 32fr;
+  grid-auto-rows: min-content;
+  align-content: center;
+  grid-template-areas:
+    "intro heroAnim" "details heroAnim" "tech heroAnim"
+    "responsibilities heroAnim";
+  gap: 1.25rem 7rem;
+
+  .detail {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    hr {
+      flex-grow: 1;
+      color: inherit;
+      border-style: dashed;
+    }
+  }
+
+  .pillContainer {
+    display: flex;
+    gap: 0.25rem;
+    flex-wrap: wrap;
+  }
+
+  figure {
+    grid-area: heroAnim;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+  }
+
+  @media screen and ((max-width: vars.$mobileBreakpoint)) {
+    grid-template-columns: 1fr;
+    grid-template-areas: "heroAnim" "intro" "details" "tech" "responsibilities";
+    gap: 0;
+    align-content: initial;
+
+    figure {
+      height: 500px;
+      padding-top: 2rem;
+      margin-bottom: 0.75rem;
+    }
+    section + section {
+      margin-bottom: 1rem;
+    }
+    & > section:first-of-type {
+      margin-bottom: 2rem;
+    }
+  }
+}

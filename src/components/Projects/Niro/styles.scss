@@ -1,0 +1,80 @@
+@use "sass:math";
+
+main#niro {
+  --bgColor: var(--niro);
+
+  #niroHeroAnim {
+    position: relative;
+    width: min(512px, 100%);
+    aspect-ratio: 1;
+    border-radius: 100%;
+    overflow: hidden;
+    outline: 1px solid black;
+
+    .niroCircle {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      translate: -50% -50%;
+      width: 100%;
+      aspect-ratio: 1;
+      border-radius: 100%;
+      outline: 1px solid black;
+      scale: 0;
+      transform-origin: bottom;
+      display: grid;
+      place-items: center;
+      font-size: 2rem;
+
+      $animDuration: 5000;
+      $elementCount: 10;
+
+      @for $i from 0 through $elementCount - 1 {
+        $scaleValue: 0 + ($i * 0.125);
+        $scaleIncrement: $scaleValue + 0.25;
+        $animationName: niroCircleScale-#{$i + 1};
+
+        &:nth-child(#{$i + 1}) {
+          animation: #{$animationName} #{$animDuration}ms infinite linear;
+          z-index: #{($elementCount + 1) - $i};
+        }
+
+        @keyframes #{$animationName} {
+          from {
+            scale: $scaleValue;
+          }
+          to {
+            scale: $scaleIncrement;
+          }
+        }
+      }
+
+      &:nth-child(even) {
+        background-color: rgba($color: #fceee8, $alpha: 1);
+      }
+
+      &:nth-child(odd) {
+        background-color: rgba($color: #f3baa1, $alpha: 1);
+      }
+    }
+
+    img {
+      width: 50%;
+      z-index: 100;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      translate: -50% -40%;
+
+      &.startAnim {
+        animation: revealPhone 800ms forwards cubic-bezier(0.165, 0.84, 0.44, 1);
+      }
+
+      @keyframes revealPhone {
+        from {
+          translate: -50% 120%;
+        }
+      }
+    }
+  }
+}

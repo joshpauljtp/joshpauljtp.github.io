@@ -1,0 +1,66 @@
+@use "sass:math";
+
+$circleCount: 8;
+$animDuration: 4000;
+
+main#home {
+  place-items: center;
+
+  .heroAnim {
+    width: 512px;
+    aspect-ratio: 1;
+    position: relative;
+
+    .circle {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      translate: -50% -50%;
+      aspect-ratio: 1;
+      border-radius: 100%;
+      color: var(--bgColor);
+
+      @for $i from 1 through $circleCount {
+        &:nth-of-type(#{$i + 1}) {
+          $delay: $animDuration - math.div($animDuration, $circleCount) * $i;
+          $spinDelay: 60 * $i + $animDuration;
+
+          animation: growCircle-#{$i + 1} #{$animDuration}ms forwards,
+            spinCircle
+              #{$animDuration}ms
+              infinite
+              cubic-bezier(0.37, 0, 0.63, 1);
+          animation-delay: #{$delay}ms, #{$spinDelay}ms;
+          border: 2px solid currentColor;
+          --shadowColor: currentColor;
+
+          box-shadow: 0 0 10px var(--shadowColor),
+            inset 0 0 10px var(--shadowColor);
+        }
+
+        @keyframes growCircle-#{$i + 1} {
+          from {
+            color: var(--bgColor);
+            width: #{math.div(100, $circleCount) + "%"};
+          }
+          to {
+            color: var(--fgColor);
+            width: #{math.div(100, $circleCount) * $i + "%"};
+          }
+        }
+      }
+    }
+
+    @keyframes spinCircle {
+      0%,
+      100% {
+        --shadowColor: red;
+        transform: rotateY(180deg) rotateX(-180deg);
+      }
+      50% {
+        --shadowColor: blue;
+        transform: rotateY(0deg) rotateX(0deg);
+      }
+    }
+  }
+}
