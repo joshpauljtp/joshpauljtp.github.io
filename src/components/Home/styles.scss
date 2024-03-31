@@ -1,29 +1,42 @@
 @use "sass:math";
 
 $circleCount: 8;
-$animDuration: 4000;
+$animDuration: 8000;
 
 main#home {
   place-items: center;
 
   .heroAnim {
-    width: 512px;
+    width: 608px;
     aspect-ratio: 1;
     position: relative;
+    overflow: hidden;
 
     .circle {
+      display: grid;
       position: absolute;
       top: 50%;
       left: 50%;
       translate: -50% -50%;
       aspect-ratio: 1;
       border-radius: 100%;
-      color: var(--bgColor);
+      padding: 0.5rem;
+      color: var(--fgColor);
+
+      $colors: var(--home), var(--magnifi), var(--tpm), var(--cloudwall),
+        var(--niro), var(--rootedCompany), var(--orion), var(--rayaLucaria);
+
+      .reverse {
+        scale: -1;
+      }
 
       @for $i from 1 through $circleCount {
-        &:nth-of-type(#{$i + 1}) {
+        &:nth-of-type(#{$i }) {
           $delay: $animDuration - math.div($animDuration, $circleCount) * $i;
           $spinDelay: 60 * $i + $animDuration;
+          z-index: #{$circleCount - $i};
+          background-color: nth($colors, $i);
+          justify-content: center;
 
           animation: growCircle-#{$i + 1} #{$animDuration}ms forwards,
             spinCircle
@@ -31,22 +44,38 @@ main#home {
               infinite
               cubic-bezier(0.37, 0, 0.63, 1);
           animation-delay: #{$delay}ms, #{$spinDelay}ms;
-          border: 2px solid currentColor;
-          --shadowColor: currentColor;
+          border: 3px solid black;
+          // --shadowColor: currentColor;
 
-          box-shadow: 0 0 10px var(--shadowColor),
-            inset 0 0 10px var(--shadowColor);
+          // box-shadow: 0 0 2px 2px var(--shadowColor),
+          //   inset 0 0 2px 2px var(--shadowColor);
+
+          img {
+            width: 1.5em;
+          }
         }
 
         @keyframes growCircle-#{$i + 1} {
           from {
-            color: var(--bgColor);
+            // color: var(--bgColor);
             width: #{math.div(100, $circleCount) + "%"};
           }
           to {
-            color: var(--fgColor);
+            // color: var(--fgColor);
             width: #{math.div(100, $circleCount) * $i + "%"};
           }
+        }
+      }
+
+      &:first-of-type {
+        place-items: center;
+
+        .reverse {
+          display: none;
+        }
+
+        img {
+          width: 3.25em;
         }
       }
     }
@@ -54,11 +83,11 @@ main#home {
     @keyframes spinCircle {
       0%,
       100% {
-        --shadowColor: red;
+        // --shadowColor: red;
         transform: rotateY(180deg) rotateX(-180deg);
       }
       50% {
-        --shadowColor: blue;
+        // --shadowColor: blue;
         transform: rotateY(0deg) rotateX(0deg);
       }
     }
