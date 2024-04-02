@@ -1,7 +1,6 @@
-import { For } from "solid-js";
+import { For, createEffect, onCleanup } from "solid-js";
 import NiroHero from "../../../assets/NiroHero.gif";
-
-import { createEffect, onCleanup } from "solid-js";
+import "./styles.scss";
 
 const AnimatedImage = () => {
   let imgRef: HTMLImageElement | undefined = undefined;
@@ -28,9 +27,12 @@ const AnimatedImage = () => {
   return <img ref={imgRef} src={NiroHero} alt="Animated Image" />;
 };
 
-function HeroAnim() {
+type Props = {
+  homeAnim?: boolean;
+};
+function HeroAnim({ homeAnim = false }: Props) {
   return (
-    <div id="niroHeroAnim">
+    <div id="niroHeroAnim" classList={{ heroAnim: true, homeAnim: homeAnim }}>
       <For each={new Array(10)}>{() => <div class="niroCircle"></div>}</For>
       <AnimatedImage />
     </div>

@@ -1,4 +1,5 @@
 @use "sass:math";
+@use "../../styles/variables" as vars;
 
 $circleCount: 8;
 $animDuration: 8000;
@@ -6,7 +7,7 @@ $animDuration: 8000;
 main#home {
   place-items: center;
 
-  .heroAnim {
+  #homeHeroAnim {
     width: 608px;
     aspect-ratio: 1;
     position: relative;
@@ -22,6 +23,8 @@ main#home {
       border-radius: 100%;
       padding: 0.5rem;
       color: var(--fgColor);
+      opacity: 0.15;
+      transition: opacity 400ms;
 
       $colors: var(--home), var(--magnifi), var(--tpm), var(--cloudwall),
         var(--niro), var(--rootedCompany), var(--orion), var(--rayaLucaria);
@@ -30,25 +33,31 @@ main#home {
         scale: -1;
       }
 
+      &.active {
+        opacity: 1;
+        &:hover {
+          opacity: 0.6;
+        }
+      }
+
       @for $i from 1 through $circleCount {
         &:nth-of-type(#{$i }) {
           $delay: $animDuration - math.div($animDuration, $circleCount) * $i;
           $spinDelay: 60 * $i + $animDuration;
-          z-index: #{$circleCount - $i};
-          background-color: nth($colors, $i);
+          z-index: #{$circleCount - $i + 1};
+          // background-color: nth($colors, $i);
+          background-color: transparent;
           justify-content: center;
+          width: #{math.div(100, $circleCount) * $i + "%"};
 
-          animation: growCircle-#{$i + 1} #{$animDuration}ms forwards,
-            spinCircle
-              #{$animDuration}ms
-              infinite
-              cubic-bezier(0.37, 0, 0.63, 1);
+          // animation: growCircle-#{$i + 1} #{$animDuration}ms forwards,
+          //   spinCircle
+          //     #{$animDuration}ms
+          //     infinite
+          //     cubic-bezier(0.37, 0, 0.63, 1);
           animation-delay: #{$delay}ms, #{$spinDelay}ms;
           border: 3px solid black;
-          // --shadowColor: currentColor;
-
-          // box-shadow: 0 0 2px 2px var(--shadowColor),
-          //   inset 0 0 2px 2px var(--shadowColor);
+          box-shadow: inset 0 0 40px 80px nth($colors, $i);
 
           img {
             width: 1.5em;
@@ -89,6 +98,21 @@ main#home {
       50% {
         // --shadowColor: blue;
         transform: rotateY(0deg) rotateX(0deg);
+      }
+    }
+
+    aside {
+      position: fixed;
+      inset: 0;
+      transition: background-color 400ms;
+      display: grid;
+      align-items: center;
+      color: red;
+
+      .heroAnim {
+        position: absolute;
+        // inset: 0;
+        z-index: -1;
       }
     }
   }

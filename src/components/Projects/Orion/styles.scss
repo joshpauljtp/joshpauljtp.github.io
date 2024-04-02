@@ -8,100 +8,100 @@ main#orion {
   footer {
     --mixValue: 90%;
   }
+}
 
-  .heroAnim {
+#orionHeroAnim {
+  position: relative;
+  width: 100%;
+
+  $offset: 38px;
+  $animDuration: 6000ms;
+
+  #scaleBody {
+    display: flex;
+    justify-content: center;
     position: relative;
+    top: $offset;
+
+    &::before {
+      content: "";
+      position: absolute;
+      display: block;
+      width: min(320px, 30vw);
+      height: 8px;
+      background-color: white;
+      top: 50%;
+      left: 50%;
+      translate: -50% -50%;
+      animation: scaleArmRotate $animDuration infinite;
+    }
+  }
+
+  #weights {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    gap: 9vw;
     width: 100%;
+    bottom: $offset;
 
-    $offset: 38px;
-    $animDuration: 6000ms;
+    #dev {
+      animation: devWeight $animDuration infinite;
+    }
+    #figma {
+      animation: figmaWeight $animDuration infinite;
+    }
+  }
 
+  @media screen and (max-width: vars.$mobileBreakpoint) {
     #scaleBody {
-      display: flex;
-      justify-content: center;
-      position: relative;
-      top: $offset;
-
-      &::before {
-        content: "";
-        position: absolute;
-        display: block;
-        width: min(320px, 30vw);
-        height: 8px;
-        background-color: white;
-        top: 50%;
-        left: 50%;
-        translate: -50% -50%;
-        animation: scaleArmRotate $animDuration infinite;
-      }
-    }
-
-    #weights {
-      position: relative;
-      display: flex;
-      justify-content: center;
-      gap: 9vw;
-      width: 100%;
-      bottom: $offset;
-
-      #dev {
-        animation: devWeight $animDuration infinite;
-      }
-      #figma {
-        animation: figmaWeight $animDuration infinite;
-      }
-    }
-
-    @media screen and (max-width: vars.$mobileBreakpoint) {
-      #scaleBody {
-        img {
-          scale: 0.75;
-        }
-        &::before {
-          width: min(275px, 64vw);
-        }
-      }
-      #weights img {
+      img {
         scale: 0.75;
-        transform-origin: top;
+      }
+      &::before {
+        width: min(275px, 64vw);
+      }
+    }
+    #weights img {
+      scale: 0.75;
+      transform-origin: top;
 
-        &#dev {
-          bottom: 4px;
-        }
-        &#figma {
-          top: 4px;
-        }
+      &#dev {
+        bottom: 4px;
+      }
+      &#figma {
+        top: 4px;
       }
     }
   }
+}
 
-  @keyframes figmaWeight {
-    0%,
-    100% {
-      transform: translate(5%, 20%);
-    }
-    50% {
-      transform: translate(0%, 5%);
-    }
+@keyframes figmaWeight {
+  0%,
+  100% {
+    transform: translate(5%, 20%);
   }
-
-  @keyframes devWeight {
-    0%,
-    100% {
-      transform: translate(-4%, -20%);
-    }
-    50% {
-      transform: translate(0%, -5%);
-    }
+  50% {
+    transform: translate(0%, 5%);
   }
+}
 
-  @keyframes scaleArmRotate {
-    0%,
-    100% {
-      rotate: -20deg;
-    }
-    50% {
-      rotate: -5deg;
-    }
+@keyframes devWeight {
+  0%,
+  100% {
+    transform: translate(-4%, -20%);
+  }
+  50% {
+    transform: translate(0%, -5%);
+  }
+}
+
+@keyframes scaleArmRotate {
+  0%,
+  100% {
+    rotate: -20deg;
+  }
+  50% {
+    rotate: -5deg;
   }
 }

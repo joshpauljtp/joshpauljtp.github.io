@@ -3,32 +3,40 @@
 
 main#cloudwall {
   --bgColor: var(--cloudwall);
+}
 
-  #cloudwallHeroAnim {
-    display: grid;
-    place-items: center;
-    position: relative;
-    width: 100%;
+#cloudwallHeroAnim {
+  display: grid;
+  place-items: center;
+  position: relative;
+  width: 100%;
 
-    #cloudwall-hero-bg {
-      position: absolute;
-      width: min(100%, 80vw);
-      top: 50%;
-      left: 50%;
-      translate: -50% -50%;
+  #cloudwall-hero-bg {
+    position: absolute;
+    width: min(100%, 80vw);
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
 
-      $animDuration: 320000;
-      animation: rotation #{$animDuration}ms forwards linear infinite;
+    $animDuration: 320000;
+    animation: rotation #{$animDuration}ms forwards linear infinite;
 
-      @keyframes rotation {
-        100% {
-          rotate: 360deg;
-        }
+    @keyframes rotation {
+      100% {
+        rotate: 360deg;
       }
     }
+  }
 
-    #cloudwall-hero-phone {
-      width: min(220px, 40vw);
-    }
+  #cloudwall-hero-phone {
+    width: min(220px, 40vw);
+  }
+
+  &.homeAnim {
+    width: 700px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
   }
 }

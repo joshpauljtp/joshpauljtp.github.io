@@ -1,9 +1,16 @@
 import CloudwallHero from "../../../assets/CloudwallHero.png";
 import CloudwallHeroPhone from "../../../assets/CloudwallHeroPhone.png";
+import "./styles.scss";
 
-function HeroAnim() {
+type Props = {
+  homeAnim?: boolean;
+};
+function HeroAnim({ homeAnim = false }: Props) {
   return (
-    <div id="cloudwallHeroAnim">
+    <div
+      id="cloudwallHeroAnim"
+      classList={{ heroAnim: true, homeAnim: homeAnim }}
+    >
       <img src={CloudwallHero} id="cloudwall-hero-bg" alt="" />
       <img src={CloudwallHeroPhone} id="cloudwall-hero-phone" alt="" />
     </div>

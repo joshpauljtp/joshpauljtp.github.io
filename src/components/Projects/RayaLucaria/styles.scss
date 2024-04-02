@@ -1,9 +1,24 @@
 main#rayaLucaria {
   --bgColor: var(--rayaLucaria);
   --fgColor: #fffdea;
+}
 
-  .heroAnim {
-    // background-color: red;
-    width: 320px;
+#rayaLucariaHeroAnim {
+  // background-color: red;
+  width: 320px;
+
+  #spaceBackground {
+    left: 67%;
+  }
+
+  &.homeAnim {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+
+    #spaceBackground {
+      left: 50%;
+    }
   }
 }

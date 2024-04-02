@@ -1,10 +1,14 @@
 import Dev from "../../../assets/OrionDev.svg";
 import Figma from "../../../assets/OrionFigma.svg";
 import OrionScale from "../../../assets/OrionScaleCenter.svg";
+import "./styles.scss";
 
-function HeroAnim() {
+type Props = {
+  homeAnim?: boolean;
+};
+function HeroAnim({ homeAnim = false }: Props) {
   return (
-    <div class="heroAnim">
+    <div id="orionHeroAnim" classList={{ heroAnim: true, homeAnim: homeAnim }}>
       <div id="scaleBody">
         <img src={OrionScale} alt="" id="orionScale" />
       </div>

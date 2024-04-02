@@ -2,134 +2,142 @@
 
 main#rootedCompany {
   --bgColor: var(--rootedCompany);
+}
 
-  #rcHeroAnim {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 512 / 565;
+#rcHeroAnim {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 512 / 565;
+  border-radius: 100% 100% 0 0;
+  overflow: hidden;
+  transform-origin: bottom;
+  animation: scaleAnim 1500ms ease-out forwards;
+
+  &::after {
+    z-index: 2;
     border-radius: 100% 100% 0 0;
-    overflow: hidden;
-    transform-origin: bottom;
-    animation: scaleAnim 1500ms ease-out forwards;
-
-    &::after {
-      z-index: 2;
-      border-radius: 100% 100% 0 0;
-      content: "";
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      animation: coverAnim 1500ms ease-out forwards;
-    }
-
-    #stars {
-      z-index: 1;
-    }
-
-    #sky1 {
-      position: absolute;
-      inset: 0 auto auto;
-    }
-
-    #sky2,
-    #sky3,
-    #sky4,
-    #sky5,
-    #dune {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-    }
-
-    #sky2 {
-      translate: -50% -50%;
-      animation: sky2Anim 3000ms ease-out forwards;
-    }
-
-    #sky3 {
-      translate: -50% -35%;
-      animation: sky3Anim 3000ms ease-out forwards;
-    }
-
-    #sky4 {
-      translate: -50% 15%;
-      animation: sky4Anim 3000ms ease-out forwards;
-    }
-
-    #sky5 {
-      translate: -50% 15%;
-      animation: sky5Anim 3000ms ease-out forwards;
-    }
-
-    #dune {
-      translate: -50% 25%;
-      animation: duneAnim 3000ms ease-out forwards;
-    }
-
-    @media screen and (max-width: vars.$mobileBreakpoint) {
-      width: auto;
-      height: min(100%, 108vw);
-    }
+    content: "";
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    animation: coverAnim 1500ms ease-out forwards;
   }
 
-  @keyframes scaleAnim {
-    from {
-      scale: 0;
-    }
+  #stars {
+    z-index: 1;
   }
 
-  @keyframes coverAnim {
-    10% {
-      box-shadow: inset 0 0 0 512px #326940;
-    }
-    100% {
-      box-shadow: inset 0 0 0 0 #326940;
-    }
+  #sky1 {
+    position: absolute;
+    inset: 0 auto auto;
   }
 
-  @keyframes sky2Anim {
-    0% {
-      translate: -50% -20%;
-    }
-    100% {
-      translate: -50% -40%;
-    }
+  #sky2,
+  #sky3,
+  #sky4,
+  #sky5,
+  #dune {
+    position: absolute;
+    top: 50%;
+    left: 50%;
   }
 
-  @keyframes sky3Anim {
-    0% {
-      translate: -50% -20%;
-    }
-    100% {
-      translate: -50% -30%;
-    }
+  #sky2 {
+    translate: -50% -50%;
+    animation: sky2Anim 3000ms ease-out forwards;
   }
 
-  @keyframes sky4Anim {
-    0% {
-      translate: -50% 15%;
-    }
-    100% {
-      translate: -50% 0%;
-    }
+  #sky3 {
+    translate: -50% -35%;
+    animation: sky3Anim 3000ms ease-out forwards;
   }
 
-  @keyframes sky5Anim {
-    0% {
-      translate: -50% 15%;
-    }
-    100% {
-      translate: -50% 5%;
-    }
+  #sky4 {
+    translate: -50% 15%;
+    animation: sky4Anim 3000ms ease-out forwards;
   }
 
-  @keyframes duneAnim {
-    0% {
-      translate: -50% 25%;
-    }
-    100% {
-      translate: -50% -5%;
-    }
+  #sky5 {
+    translate: -50% 15%;
+    animation: sky5Anim 3000ms ease-out forwards;
+  }
+
+  #dune {
+    translate: -50% 25%;
+    animation: duneAnim 3000ms ease-out forwards;
+  }
+
+  &.homeAnim {
+    width: 512px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+  }
+
+  @media screen and (max-width: vars.$mobileBreakpoint) {
+    width: auto;
+    height: min(100%, 108vw);
+  }
+}
+
+@keyframes scaleAnim {
+  from {
+    scale: 0;
+  }
+}
+
+@keyframes coverAnim {
+  10% {
+    box-shadow: inset 0 0 0 512px #326940;
+  }
+  100% {
+    box-shadow: inset 0 0 0 0 #326940;
+  }
+}
+
+@keyframes sky2Anim {
+  0% {
+    translate: -50% -20%;
+  }
+  100% {
+    translate: -50% -40%;
+  }
+}
+
+@keyframes sky3Anim {
+  0% {
+    translate: -50% -20%;
+  }
+  100% {
+    translate: -50% -30%;
+  }
+}
+
+@keyframes sky4Anim {
+  0% {
+    translate: -50% 15%;
+  }
+  100% {
+    translate: -50% 0%;
+  }
+}
+
+@keyframes sky5Anim {
+  0% {
+    translate: -50% 15%;
+  }
+  100% {
+    translate: -50% 5%;
+  }
+}
+
+@keyframes duneAnim {
+  0% {
+    translate: -50% 25%;
+  }
+  100% {
+    translate: -50% -5%;
   }
 }

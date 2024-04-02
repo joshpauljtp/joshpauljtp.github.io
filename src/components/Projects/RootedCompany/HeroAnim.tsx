@@ -5,10 +5,14 @@ import Sky4 from "../../../assets/RC-4.png";
 import Sky5 from "../../../assets/RC-5.png";
 import Dune from "../../../assets/RC-Dune.png";
 import Stars from "../../../assets/RC-Stars.png";
+import "./styles.scss";
 
-function HeroAnim() {
+type Props = {
+  homeAnim?: boolean;
+};
+function HeroAnim({ homeAnim = false }: Props) {
   return (
-    <div id="rcHeroAnim">
+    <div id="rcHeroAnim" classList={{ heroAnim: true, homeAnim: homeAnim }}>
       <img src={Stars} id="stars" alt="" />
       <img src={Sky1} id="sky1" alt="" />
       <img src={Sky2} id="sky2" alt="" />
