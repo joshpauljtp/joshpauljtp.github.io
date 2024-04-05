@@ -16,8 +16,10 @@ import "./styles/reset.scss";
 import "./styles/typography.scss";
 
 import { inject } from "@vercel/analytics";
+import { injectSpeedInsights } from "@vercel/speed-insights";
 
 inject();
+injectSpeedInsights();
 
 const root = document.getElementById("root");
 

@@ -12,6 +12,7 @@
     "@solidjs/router": "^0.13.1",
     "@types/node": "^20.12.4",
     "@vercel/analytics": "^1.2.2",
+    "@vercel/speed-insights": "^1.0.10",
     "solid-js": "^1.8.15"
   },
   "devDependencies": {
