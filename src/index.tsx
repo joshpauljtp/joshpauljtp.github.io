@@ -15,6 +15,10 @@ import "./styles/globalStyles.scss";
 import "./styles/reset.scss";
 import "./styles/typography.scss";
 
+import { inject } from "@vercel/analytics";
+
+inject();
+
 const root = document.getElementById("root");
 
 render(
