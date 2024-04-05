@@ -1,147 +1,53 @@
-import { Index, createSignal } from "solid-js";
-import Cloudwalllogo from "../.../../../assets/Cloudwall-Logo.svg";
-import Maglogo from "../.../../../assets/Mag-Logo.svg";
-import Nirologo from "../.../../../assets/Niro-Logo.svg";
-import OrionLogo from "../.../../../assets/Orion-Logo.svg";
-import RClogo from "../.../../../assets/RC-Logo.svg";
-import RLsigil from "../.../../../assets/RL-Sigil.svg";
-import Sig from "../.../../../assets/Sig.svg";
-import TPMlogo from "../.../../../assets/TPM-Logo.svg";
+import { useNavigate } from "@solidjs/router";
+import { Accessor, Index, Setter } from "solid-js";
+import {
+  HOME_ANIM_DATA,
+  INITIAL_SELECTED_PROJECT,
+  SelectedProject,
+} from "./utils";
 
-import { default as CloudwallHeroAnim } from "../Projects/Cloudwall/HeroAnim";
-import { default as MagHeroAnim } from "../Projects/Magnifi/HeroAnim";
-import { default as NiroHeroAnim } from "../Projects/Niro/HeroAnim";
-import { default as OrionHeroAnim } from "../Projects/Orion/HeroAnim";
-import { default as RayaLucariaHeroAnim } from "../Projects/RayaLucaria/HeroAnim";
-import { default as RootedCompanyHeroAnim } from "../Projects/RootedCompany/HeroAnim";
+type Props = {
+  isMobile: Accessor<boolean>;
+  selectedProject: Accessor<SelectedProject>;
+  setSelectedProject: Setter<SelectedProject>;
+};
 
-function HeroAnim() {
-  const getIcon = (name: string, reverse = false) => {
-    const className = reverse ? "reverse" : "";
-    switch (name) {
-      case "Raya Lucaria":
-        return <img src={RLsigil} alt="" class={className} />;
-
-      case "Orion":
-        return <img src={OrionLogo} alt="" class={className} />;
-
-      case "Magnifi":
-        return <img src={Maglogo} alt="" class={className} />;
-
-      case "Cloudwall":
-        return <img src={Cloudwalllogo} alt="" class={className} />;
-
-      case "TPM":
-      case "Tifin Private Markets":
-        return <img src={TPMlogo} alt="" class={className} />;
-
-      case "Niro":
-        return <img src={Nirologo} alt="" class={className} />;
-
-      case "Rooted Company":
-        return <img src={RClogo} alt="" class={className} />;
-
-      default:
-        return <img src={Sig} alt="" class={className} />;
-    }
-  };
-
-  const arr = [
-    {
-      name: "",
-      link: "#",
-      className: "",
-    },
-    {
-      name: "Magnifi",
-      link: "/projects/magnifi",
-      className: "magnifi",
-    },
-    {
-      name: "Tifin Private Markets",
-      link: "/projects/tpm",
-      className: "tpm",
-    },
-    {
-      name: "Cloudwall",
-      link: "/projects/cloudwall",
-      className: "cloudwall",
-    },
-    {
-      name: "Niro",
-      link: "/projects/niro",
-      className: "niro",
-    },
-    {
-      name: "Rooted Company",
-      link: "/projects/rooted-company",
-      className: "rootedCompany",
-    },
-    {
-      name: "Orion",
-      link: "/projects/orion",
-      className: "orion",
-    },
-    {
-      name: "Raya Lucaria",
-      link: "/projects/raya-lucaria",
-      className: "rayaLucaria",
-    },
-  ];
-
-  const INITIAL_HOVERED_PROJECT = { name: "", class: "" };
-
-  const [hoveredProject, setHoveredProject] = createSignal(
-    INITIAL_HOVERED_PROJECT
-  );
-
+function HeroAnim({ isMobile, selectedProject, setSelectedProject }: Props) {
+  const navigate = useNavigate();
   return (
     <div id="homeHeroAnim" class="heroAnim">
-      <Index each={arr}>
+      <Index each={HOME_ANIM_DATA}>
         {(item) => {
-          const { name, className, link } = item();
+          const { link, className, icon, name } = item();
           return (
-            <a
-              class="circle"
+            <div
               classList={{
                 circle: true,
                 active:
-                  hoveredProject().class === className
-                    ? hoveredProject().class === className
-                    : hoveredProject().class === "" || name === "",
+                  selectedProject().className === className
+                    ? selectedProject().className === className
+                    : selectedProject().className === "",
               }}
-              href={link}
-              onMouseOver={() => setHoveredProject({ name, class: className })}
-              onMouseLeave={() => setHoveredProject(INITIAL_HOVERED_PROJECT)}
+              {...(isMobile()
+                ? {
+                    onClick: () => setSelectedProject(item),
+                  }
+                : {
+                    onClick: () => navigate(link),
+                    onMouseOver: () => setSelectedProject(item),
+                    onMouseLeave: () =>
+                      setSelectedProject(INITIAL_SELECTED_PROJECT),
+                  })}
             >
-              {getIcon(name)}
-              <span class="reverse">{getIcon(name, true)}</span>
-            </a>
+              <img src={icon} alt="" />
+              {name}
+              <span class="reverse">
+                <img src={icon} alt="" class="reverse" />
+              </span>
+            </div>
           );
         }}
       </Index>
-      <aside class={`colors-${hoveredProject().class}`}>
-        <section>
-          <h1>{hoveredProject().name}</h1>
-          <h3>wasd wasd wasd</h3>
-        </section>
-
-        {/* {true && <MagHeroAnim homeAnim />} */}
-        {hoveredProject().name === "Cloudwall" && (
-          <CloudwallHeroAnim homeAnim />
-        )}
-        {hoveredProject().name === "Rooted Company" && (
-          <RootedCompanyHeroAnim homeAnim />
-        )}
-        {hoveredProject().name === "Niro" && <NiroHeroAnim homeAnim />}
-        {hoveredProject().name === "Magnifi" && <MagHeroAnim homeAnim />}
-        {hoveredProject().name === "Orion" && <OrionHeroAnim />}
-        {hoveredProject().name === "Raya Lucaria" && (
-          <RayaLucariaHeroAnim homeAnim />
-        )}
-
-        <br />
-      </aside>
     </div>
   );
 }

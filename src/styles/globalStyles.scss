@@ -24,6 +24,7 @@
 }
 
 footer {
+  transition: background-color 400ms;
   position: fixed;
   bottom: 1.5rem;
   left: 50%;
@@ -84,6 +85,7 @@ footer {
 }
 
 main {
+  transition: background-color 400ms;
   background-color: var(--bgColor);
   color: var(--fgColor);
   min-height: 100dvh;
@@ -107,35 +109,34 @@ main {
 
 .colors {
   &-magnifi {
-    background-color: var(--magnifi);
+    --bgColor: var(--magnifi);
     font-size: 2rem;
   }
 
   &-tpm {
-    background-color: var(--tpm);
+    --bgColor: var(--tpm);
   }
 
   &-cloudwall {
-    background-color: var(--cloudwall);
+    --bgColor: var(--cloudwall);
   }
 
   &-niro {
-    background-color: var(--niro);
+    --bgColor: var(--niro);
   }
 
   &-rootedCompany {
-    background-color: var(--rootedCompany);
+    --bgColor: var(--rootedCompany);
   }
 
   &-rayaLucaria {
-    background-color: var(--rayaLucaria);
-    color: var(--rayaLucariaForeground);
+    --bgColor: var(--rayaLucaria);
+    --fgColor: var(--rayaLucariaForeground);
     font-size: 30vw;
-    line-height: 1;
   }
 
   &-orion {
-    background-color: var(--orion);
-    color: var(--orionForeground);
+    --bgColor: var(--orion);
+    --fgColor: var(--orionForeground);
   }
 }
