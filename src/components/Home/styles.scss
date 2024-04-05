@@ -28,6 +28,7 @@ main#home {
       padding: 0.5rem;
       color: transparent;
       opacity: 0.15;
+      font-size: 18px;
       font-weight: 500;
       $colors: var(--home), var(--magnifi), var(--tpm), var(--cloudwall),
         var(--niro), var(--rootedCompany), var(--orion), var(--rayaLucaria);
@@ -38,7 +39,10 @@ main#home {
 
       &.active {
         opacity: 1;
-        color: var(--fgColor);
+
+        &:hover {
+          color: var(--fgColor);
+        }
       }
 
       @for $i from 1 through $circleCount {
@@ -50,30 +54,12 @@ main#home {
           z-index: #{$circleCount - $i + 1};
           background-color: transparent;
           width: #{math.div(100, $circleCount) * $i + "%"};
-          // animation-delay: #{$delay}ms, #{$spinDelay}ms;
           border: 3px solid black;
           box-shadow: inset 0 0 0px 36px nth($colors, $i),
             inset 0 0 0 39px black;
 
           img {
             width: 1.5em;
-          }
-        }
-
-        &:nth-of-type(even) {
-          animation-name: rotateCircleClockwise;
-        }
-
-        &:nth-of-type(odd) {
-          animation-name: rotateCircleAntiClockwise;
-        }
-
-        @keyframes growCircle-#{$i + 1} {
-          from {
-            width: #{math.div(100, $circleCount) + "%"};
-          }
-          to {
-            width: #{math.div(100, $circleCount) * $i + "%"};
           }
         }
       }
@@ -88,6 +74,15 @@ main#home {
         img {
           width: 3.25em;
         }
+      }
+
+      &#cloudwall-capital-circle.active:hover {
+        color: white;
+      }
+
+      &#tifin-private-markets-circle {
+        padding-inline: 10%;
+        text-align: center;
       }
     }
   }

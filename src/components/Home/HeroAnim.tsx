@@ -19,8 +19,10 @@ function HeroAnim({ isMobile, selectedProject, setSelectedProject }: Props) {
       <Index each={HOME_ANIM_DATA}>
         {(item) => {
           const { link, className, icon, name } = item();
+          const id = name.replaceAll(" ", "-").toLowerCase() + "-circle";
           return (
             <div
+              id={id}
               classList={{
                 circle: true,
                 active:
