@@ -1,4 +1,59 @@
+@use "../../../styles/variables" as vars;
+@use "sass:math";
 main#tpm {
   --bgColor: var(--tpm);
-  --fgColor: #fff;
+}
+
+#tpmHeroAnim {
+  position: relative;
+
+  #tpmLogoGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    rotate: 45deg;
+    gap: 2rem;
+
+    .tpmLogo {
+      rotate: 45deg;
+      opacity: 0;
+      $animDuration: 500;
+      animation: fadeIn #{$animDuration}ms forwards;
+
+      @for $i from 1 through 16 {
+        &:nth-child(#{16 - $i}) {
+          animation-delay: #{(math.div($animDuration, 16) * $i)}ms;
+        }
+      }
+    }
+  }
+
+  .laptop {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    rotate: -5deg;
+    scale: 1.5;
+  }
+
+  &.homeAnim {
+    width: 512px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+  }
+
+  @keyframes fadeIn {
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @media screen and (max-width: vars.$mobileBreakpoint) {
+    .tpmLogo {
+      width: 48px;
+    }
+  }
 }

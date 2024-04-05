@@ -14,6 +14,7 @@ import { default as NiroHeroAnim } from "../Projects/Niro/HeroAnim";
 import { default as OrionHeroAnim } from "../Projects/Orion/HeroAnim";
 import { default as RayaLucariaHeroAnim } from "../Projects/RayaLucaria/HeroAnim";
 import { default as RootedCompanyHeroAnim } from "../Projects/RootedCompany/HeroAnim";
+import { default as TpmHeroAnim } from "../Projects/TPM/HeroAnim";
 
 export enum PROJECT_NAMES {
   home = "",
@@ -43,7 +44,7 @@ export const HOME_ANIM_DATA = [
   },
   {
     name: PROJECT_NAMES.tpm,
-    link: "/projects/tpm",
+    link: "/projects/tifin-private-markets",
     className: "tpm",
     icon: TPMlogo,
     subtitle: "Alternative investments platform",
@@ -99,7 +100,7 @@ export const heroAnimMap = (name: SelectedProject["name"]) => {
   const map: Record<SelectedProject["name"], JSX.Element> = {
     [PROJECT_NAMES.home]: <></>,
     [PROJECT_NAMES.magnifi]: <MagHeroAnim homeAnim />,
-    [PROJECT_NAMES.tpm]: <></>,
+    [PROJECT_NAMES.tpm]: <TpmHeroAnim homeAnim />,
     [PROJECT_NAMES.cloudwall]: <CloudwallHeroAnim homeAnim />,
     [PROJECT_NAMES.niro]: <NiroHeroAnim homeAnim />,
     [PROJECT_NAMES.rootedCompany]: <RootedCompanyHeroAnim homeAnim />,
