@@ -1,12 +1,11 @@
+import Cloudwalllogo from "@/assets/Cloudwall-Logo.svg";
+import Maglogo from "@/assets/Mag-Logo.svg";
+import Nirologo from "@/assets/Niro-Logo.svg";
+import OrionLogo from "@/assets/Orion-Logo.svg";
+import RClogo from "@/assets/RC-Logo.svg";
+import RLsigil from "@/assets/RL-Sigil.svg";
+import TPMlogo from "@/assets/TPM-Logo.svg";
 import { JSX } from "solid-js";
-import Cloudwalllogo from "../.../../../assets/Cloudwall-Logo.svg";
-import Maglogo from "../.../../../assets/Mag-Logo.svg";
-import Nirologo from "../.../../../assets/Niro-Logo.svg";
-import OrionLogo from "../.../../../assets/Orion-Logo.svg";
-import RClogo from "../.../../../assets/RC-Logo.svg";
-import RLsigil from "../.../../../assets/RL-Sigil.svg";
-import Sig from "../.../../../assets/Sig.svg";
-import TPMlogo from "../.../../../assets/TPM-Logo.svg";
 
 import { default as CloudwallHeroAnim } from "../Projects/Cloudwall/HeroAnim";
 import { default as MagHeroAnim } from "../Projects/Magnifi/HeroAnim";
@@ -32,7 +31,7 @@ export const HOME_ANIM_DATA = [
     name: PROJECT_NAMES.home,
     link: "",
     className: "",
-    icon: Sig,
+    icon: "",
     subtitle: "",
   },
   {
@@ -110,3 +109,14 @@ export const heroAnimMap = (name: SelectedProject["name"]) => {
 
   return map[name];
 };
+
+/*
+1. Content
+2. Fix navbar colors
+3. Image/gif optimization
+4. About
+5. Contact
+6. Resume
+7. Fix jpaul svg on mobile - Done
+8. Fix jpaul svg white/black flipping - Done
+*/

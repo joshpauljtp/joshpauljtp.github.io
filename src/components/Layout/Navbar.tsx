@@ -1,6 +1,6 @@
 import { A } from "@solidjs/router";
 import { Index } from "solid-js";
-import Sig from "../.../../../assets/Sig.svg";
+import Sig from "../.../../../assets/Sig.tsx";
 
 function Navbar() {
   const LINKS = ["About", "Projects", "Contact"];
@@ -10,7 +10,7 @@ function Navbar() {
       <a href="/">
         {/* <div>JP</div> */}
         <div>
-          <img src={Sig} alt="" />
+          <Sig />
         </div>
       </a>
       <nav>

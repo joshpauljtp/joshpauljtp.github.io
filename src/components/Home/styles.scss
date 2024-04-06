@@ -64,15 +64,17 @@ main#home {
         }
       }
 
-      &:first-of-type {
-        place-items: center;
+      &#-circle {
+        justify-content: center;
+        color: black;
 
         .reverse {
           display: none;
         }
 
-        img {
+        svg {
           width: 3.25em;
+          height: 3.125em;
         }
       }
 

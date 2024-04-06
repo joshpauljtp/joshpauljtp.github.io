@@ -1,3 +1,4 @@
+import Sig from "@/assets/Sig";
 import { useNavigate } from "@solidjs/router";
 import { Accessor, Index, Setter } from "solid-js";
 import {
@@ -41,7 +42,8 @@ function HeroAnim({ isMobile, selectedProject, setSelectedProject }: Props) {
                       setSelectedProject(INITIAL_SELECTED_PROJECT),
                   })}
             >
-              <img src={icon} alt="" />
+              {icon === "" ? <Sig /> : <img src={icon} alt="" />}
+
               {name}
               <span class="reverse">
                 <img src={icon} alt="" class="reverse" />
