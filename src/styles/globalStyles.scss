@@ -2,19 +2,28 @@
 
 :root {
   --home: #ededed;
+  --home2: #f2f2f2;
   --magnifi: #eadea1;
+  --magnifi2: #e9e3c5;
   --cloudwall: #ece5f4;
+  --cloudwall2: #f2eef6;
   --tpm: #cadff3;
+  --tpm2: #dee8f2;
   --rootedCompany: #ceebd6;
+  --rootedCompany2: #e0eee4;
   --niro: #ffeae1;
+  --niro2: #fcf2ed;
   --orion: #363636;
+  --orion2: #4a4a4a;
   --rayaLucaria: #010a11;
+  --rayaLucaria2: #07253c;
 
   --rayaLucariaForeground: #fffdea;
   --orionForeground: #fff;
 
   --bgColor: var(--home);
   --fgColor: #000;
+  --secondaryBgColor: var(--home2);
 
   --bodyHorizontalPadding: 2.5rem;
 
@@ -52,11 +61,7 @@ footer {
 
       &.active {
         outline: 1px solid;
-        background-color: color-mix(
-          in hsl longer hue,
-          var(--bgColor) var(--mixValue),
-          white
-        );
+        background-color: var(--secondaryBgColor);
       }
     }
   }
@@ -70,11 +75,7 @@ footer {
     border-radius: 100%;
     display: grid;
     place-items: center;
-    background-color: color-mix(
-      in hsl longer hue,
-      var(--bgColor) var(--mixValue),
-      white
-    );
+    background-color: var(--secondaryBgColor);
 
     svg {
       width: 1.625em;
@@ -114,33 +115,40 @@ main {
 .colors {
   &-magnifi {
     --bgColor: var(--magnifi);
+
+    --secondaryBgColor: var(--magnifi2);
     font-size: 2rem;
   }
 
   &-tpm {
     --bgColor: var(--tpm);
+    --secondaryBgColor: var(--tpm2);
   }
 
   &-cloudwall {
     --bgColor: var(--cloudwall);
+    --secondaryBgColor: var(--cloudwall2);
   }
 
   &-niro {
     --bgColor: var(--niro);
+    --secondaryBgColor: var(--niro2);
   }
 
   &-rootedCompany {
     --bgColor: var(--rootedCompany);
+    --secondaryBgColor: var(--rootedCompany2);
   }
 
   &-rayaLucaria {
     --bgColor: var(--rayaLucaria);
     --fgColor: var(--rayaLucariaForeground);
-    font-size: 30vw;
+    --secondaryBgColor: var(--rayaLucaria2);
   }
 
   &-orion {
     --bgColor: var(--orion);
     --fgColor: var(--orionForeground);
+    --secondaryBgColor: var(--orion2);
   }
 }

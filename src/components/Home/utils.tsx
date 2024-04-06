@@ -112,11 +112,12 @@ export const heroAnimMap = (name: SelectedProject["name"]) => {
 
 /*
 1. Content
-2. Fix navbar colors
+2. Fix navbar colors - Done
 3. Image/gif optimization
 4. About
 5. Contact
 6. Resume
 7. Fix jpaul svg on mobile - Done
 8. Fix jpaul svg white/black flipping - Done
+9. Mobile home arrow
 */
