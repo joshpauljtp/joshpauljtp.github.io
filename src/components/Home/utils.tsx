@@ -120,4 +120,5 @@ export const heroAnimMap = (name: SelectedProject["name"]) => {
 7. Fix jpaul svg on mobile - Done
 8. Fix jpaul svg white/black flipping - Done
 9. Mobile home arrow
+10. Fix icon placements in mandela
 */
