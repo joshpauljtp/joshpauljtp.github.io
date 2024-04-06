@@ -3,12 +3,11 @@ import { Index } from "solid-js";
 import Sig from "../.../../../assets/Sig.tsx";
 
 function Navbar() {
-  const LINKS = ["About", "Projects", "Contact"];
+  const LINKS = ["About"];
 
   return (
     <footer>
       <a href="/">
-        {/* <div>JP</div> */}
         <div>
           <Sig />
         </div>
