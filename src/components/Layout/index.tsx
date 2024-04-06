@@ -8,7 +8,7 @@ function Layout(props: Props) {
   const location = useLocation();
 
   const idMap: Record<string, string> = {
-    "/": "home",
+    "/about": "about",
     "/projects/cloudwall": "cloudwall",
     "/projects/magnifi": "magnifi",
     "/projects/rooted-company": "rootedCompany",
@@ -21,7 +21,7 @@ function Layout(props: Props) {
   const id = createMemo(() => idMap[location.pathname]);
 
   return (
-    <main id={id()}>
+    <main id={id() ?? "home"}>
       {props.children}
       <Navbar />
     </main>

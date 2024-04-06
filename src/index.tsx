@@ -1,6 +1,7 @@
 /* @refresh reload */
 import { Route, Router } from "@solidjs/router";
 import { render } from "solid-js/web";
+import AboutPage from "./components/About";
 import HomePage from "./components/Home";
 import Layout from "./components/Layout";
 
@@ -27,6 +28,8 @@ render(
   () => (
     <Router root={Layout}>
       <Route path="/" component={HomePage} />
+      <Route path="*404" component={HomePage} />
+      <Route path="/about" component={AboutPage} />
       <Route path="/projects/magnifi" component={Magnifi} />
       <Route path="/projects/tifin-private-markets" component={TPM} />
       <Route path="/projects/cloudwall" component={Cloudwall} />
