@@ -1,3 +1,4 @@
+import Arrow from "@/assets/Arrow";
 import { A } from "@solidjs/router";
 import {
   Match,
@@ -53,7 +54,9 @@ function HomePage() {
               <h1>{selectedProject().name}</h1>
               <h3>{selectedProject().subtitle}</h3>
               {selectedProject().link && (
-                <A href={selectedProject().link}>(arrow)</A>
+                <A href={selectedProject().link}>
+                  <Arrow />
+                </A>
               )}
             </section>
           </Match>
