@@ -1,15 +1,21 @@
-import { A } from "@solidjs/router";
+import Arrow from "@/assets/Arrow.tsx";
+import { A, useLocation } from "@solidjs/router";
 import { Index } from "solid-js";
 import Sig from "../.../../../assets/Sig.tsx";
 
 function Navbar() {
   const LINKS = ["About"];
+  const location = useLocation();
 
   return (
     <footer>
       <a href="/">
         <div>
-          <Sig />
+          {location.pathname.includes("projects/") ? (
+            <Arrow dir="left" id="navBackArrow" />
+          ) : (
+            <Sig />
+          )}
         </div>
       </a>
       <nav>
