@@ -1,3 +1,4 @@
+import Gallery from "../common/Gallery";
 import Snapshot from "../common/Snapshot";
 import HeroAnim from "./HeroAnim";
 import "./styles.scss";
@@ -51,6 +52,7 @@ function TPM() {
       <Snapshot {...snapshotProps}>
         <HeroAnim />
       </Snapshot>
+      <Gallery />
     </>
   );
 }

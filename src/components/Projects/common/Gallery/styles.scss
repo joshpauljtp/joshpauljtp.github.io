@@ -1,0 +1,62 @@
+#gallery {
+  display: grid;
+  grid-template-columns: repeat(5, 192px);
+  gap: 1rem;
+
+  img {
+    object-fit: cover;
+    object-position: top;
+    height: 400px;
+    background-image: linear-gradient(
+      45deg,
+      var(--fgColor) 10%,
+      var(--bgColor) 10%,
+      var(--bgColor) 50%,
+      var(--fgColor) 50%,
+      var(--fgColor) 60%,
+      var(--bgColor) 60%,
+      var(--bgColor) 100%
+    );
+
+    background-size: 32px 32px;
+    // opacity: 0.5;
+    background-repeat: repeat;
+    border: 1px solid var(--fgColor);
+    border-radius: 2rem;
+    animation: backgroundPan linear infinite;
+
+    // Loop through the series and apply styles
+    @for $i from 1 through 12 {
+      $isSpecial: $i
+        %
+        3 ==
+        1 or
+        $i
+        %
+        3 ==
+        2; // Check if the index is part of the series
+
+      &:nth-child(#{$i}) {
+        @if $i == 2 {
+          aspect-ratio: 1/1;
+          grid-column: span 2; // Special case for n=2
+          animation-duration: 16s;
+        } @else if $isSpecial {
+          aspect-ratio: 608/400;
+          grid-column: span 3; // Span 3 columns for the series
+          animation-duration: 32s;
+        } @else {
+          aspect-ratio: 1/1;
+          grid-column: span 2; // Span 2 columns for other elements
+          animation-duration: 16s;
+        }
+      }
+    }
+
+    @keyframes backgroundPan {
+      to {
+        background-position: 100%;
+      }
+    }
+  }
+}

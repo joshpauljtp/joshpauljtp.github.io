@@ -1,6 +1,12 @@
+import Gallery from "../common/Gallery";
 import Snapshot from "../common/Snapshot";
 import HeroAnim from "./HeroAnim";
 import "./styles.scss";
+
+import Assistant2 from "@/assets/Magnifi/Assistant 2.jpg";
+import Charts from "@/assets/Magnifi/Charts.png";
+import DiscoverPDP from "@/assets/Magnifi/Discover+PDP.png";
+import LoggedInHomePage from "@/assets/Magnifi/LIHP.png";
 
 function Magnifi() {
   const title = "Magnifi";
@@ -55,6 +61,7 @@ function Magnifi() {
       <Snapshot {...snapshotProps}>
         <HeroAnim />
       </Snapshot>
+      <Gallery images={[LoggedInHomePage, Assistant2, Charts, DiscoverPDP]} />
     </>
   );
 }

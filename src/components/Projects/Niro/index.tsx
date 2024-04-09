@@ -18,9 +18,15 @@ function Niro() {
   ];
   const responsibilities = (
     <>
-      Led UI development of Niro Money's marketing site.
+      Sole frontend developer for Niro Money's marketing site.
       <br />
-      Worked directly with the Niro Money's mobile-only web-app.
+      Developed the UI for Niro Money's web app, built to integrate with other
+      products such as Quikr, etc.
+      <br />
+      Worked directly with Niro Money's tech team for deployments.
+      <br />
+      Actively participated in strategy meetings with Niro Money's teams for
+      both projects
     </>
   );
 

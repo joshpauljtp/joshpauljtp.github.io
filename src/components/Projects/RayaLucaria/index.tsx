@@ -1,6 +1,10 @@
+import Gallery from "../common/Gallery";
 import Snapshot from "../common/Snapshot";
 import HeroAnim from "./HeroAnim";
 import "./styles.scss";
+
+import Explore from "@/assets/RayaLucaria/Explore.png";
+import Rennala from "@/assets/RayaLucaria/Rennala.png";
 
 function RayaLucaria() {
   const title = (
@@ -44,6 +48,7 @@ function RayaLucaria() {
       <Snapshot {...snapshotProps}>
         <HeroAnim />
       </Snapshot>
+      <Gallery images={[Explore, Rennala, Rennala, Explore]} />
     </>
   );
 }
