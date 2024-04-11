@@ -19,11 +19,12 @@ function Layout(props: Props) {
   };
 
   const id = createMemo(() => idMap[location.pathname]);
+  const showNavbar = createMemo(() => !!id());
 
   return (
     <main id={id() ?? "home"}>
       {props.children}
-      <Navbar />
+      {showNavbar() && <Navbar />}
     </main>
   );
 }

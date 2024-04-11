@@ -2,7 +2,7 @@ import "./styles.scss";
 
 function AboutPage() {
   return (
-    <section>
+    <section id="aboutSection">
       <p>Hey there! Thanks for taking the time to visit my site.</p>
       <p>
         My name is Joshua Paul. Lorem ipsum dolor, sit amet consectetur

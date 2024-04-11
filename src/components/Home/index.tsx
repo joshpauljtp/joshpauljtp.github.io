@@ -1,13 +1,6 @@
 import Arrow from "@/assets/Arrow";
 import { A } from "@solidjs/router";
-import {
-  Match,
-  Switch,
-  createEffect,
-  createSignal,
-  on,
-  onCleanup,
-} from "solid-js";
+import { Show, createEffect, createSignal, on, onCleanup } from "solid-js";
 import HeroAnim from "./HeroAnim";
 import "./styles.scss";
 import { INITIAL_SELECTED_PROJECT, heroAnimMap } from "./utils";
@@ -47,24 +40,26 @@ function HomePage() {
           setSelectedProject={setSelectedProject}
         />
       </section>
-      <aside class={`colors-${selectedProject().className}`}>
-        <Switch>
-          <Match when={isMobile()}>
-            <section>
-              <h1>{selectedProject().name}</h1>
-              <h3>{selectedProject().subtitle}</h3>
-              {selectedProject().link && (
-                <A href={selectedProject().link}>
-                  <Arrow />
-                </A>
-              )}
-            </section>
-          </Match>
-          <Match when={!isMobile()}>
-            {heroAnimMap(selectedProject().name)}
-          </Match>
-        </Switch>
+      <aside
+        class={`colors-${selectedProject().className}`}
+        {...(isMobile()
+          ? { onClick: () => setSelectedProject(INITIAL_SELECTED_PROJECT) }
+          : {})}
+      >
+        {/* <Show when={!isMobile()}></Show> */}
+        {heroAnimMap(selectedProject().id)}
       </aside>
+      <Show when={selectedProject().name !== ""}>
+        <div id="projectInfo">
+          <h3>{selectedProject().name}</h3>
+          <p>{selectedProject().subtitle}</p>
+          <Show when={selectedProject().link && isMobile()}>
+            <A href={selectedProject().link}>
+              <Arrow />
+            </A>
+          </Show>
+        </div>
+      </Show>
     </>
   );
 }

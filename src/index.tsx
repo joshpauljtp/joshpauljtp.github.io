@@ -3,7 +3,7 @@ import { Route, Router } from "@solidjs/router";
 import { render } from "solid-js/web";
 import AboutPage from "./components/About";
 import HomePage from "./components/Home";
-import Layout from "./components/Layout";
+import Layout from "./components/common/Layout";
 
 import Cloudwall from "./components/Projects/Cloudwall";
 import Magnifi from "./components/Projects/Magnifi";
@@ -23,7 +23,6 @@ inject();
 injectSpeedInsights();
 
 const root = document.getElementById("root");
-
 render(
   () => (
     <Router root={Layout}>

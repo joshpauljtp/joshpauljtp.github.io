@@ -7,6 +7,7 @@ import RLsigil from "@/assets/RL-Sigil.svg";
 import TPMlogo from "@/assets/TPM-Logo.svg";
 import { JSX } from "solid-js";
 
+import AboutPage from "../About";
 import { default as CloudwallHeroAnim } from "../Projects/Cloudwall/HeroAnim";
 import { default as MagHeroAnim } from "../Projects/Magnifi/HeroAnim";
 import { default as NiroHeroAnim } from "../Projects/Niro/HeroAnim";
@@ -15,8 +16,9 @@ import { default as RayaLucariaHeroAnim } from "../Projects/RayaLucaria/HeroAnim
 import { default as RootedCompanyHeroAnim } from "../Projects/RootedCompany/HeroAnim";
 import { default as TpmHeroAnim } from "../Projects/TPM/HeroAnim";
 
-export enum PROJECT_NAMES {
+export enum PAGES {
   home = "",
+  about = "About",
   magnifi = "Magnifi",
   tpm = "Tifin Private Markets",
   cloudwall = "Cloudwall Capital",
@@ -28,56 +30,64 @@ export enum PROJECT_NAMES {
 
 export const HOME_ANIM_DATA = [
   {
-    name: PROJECT_NAMES.home,
-    link: "",
-    className: "",
+    id: PAGES.about,
+    name: "About",
+    link: "/about",
+    className: "about",
     icon: "",
     subtitle: "",
   },
   {
-    name: PROJECT_NAMES.magnifi,
+    id: PAGES.magnifi,
+    name: PAGES.magnifi,
     link: "/projects/magnifi",
     className: "magnifi",
     icon: Maglogo,
     subtitle: "AI assisted trading platform",
   },
   {
-    name: PROJECT_NAMES.tpm,
+    id: PAGES.tpm,
+    name: PAGES.tpm,
     link: "/projects/tifin-private-markets",
     className: "tpm",
     icon: TPMlogo,
     subtitle: "Alternative investments platform",
   },
   {
-    name: PROJECT_NAMES.cloudwall,
+    id: PAGES.cloudwall,
+    name: PAGES.cloudwall,
     link: "/projects/cloudwall",
     className: "cloudwall",
     icon: Cloudwalllogo,
     subtitle: "Marketing site",
   },
   {
-    name: PROJECT_NAMES.niro,
+    id: PAGES.niro,
+    name: PAGES.niro,
     link: "/projects/niro",
     className: "niro",
     icon: Nirologo,
     subtitle: "Marketing site and web app",
   },
   {
-    name: PROJECT_NAMES.rootedCompany,
+    id: PAGES.rootedCompany,
+    name: PAGES.rootedCompany,
     link: "/projects/rooted-company",
     className: "rootedCompany",
     icon: RClogo,
     subtitle: "E-commerce web app",
   },
   {
-    name: PROJECT_NAMES.orion,
+    id: PAGES.orion,
+    name: PAGES.orion,
     link: "/projects/orion",
     className: "orion",
     icon: OrionLogo,
     subtitle: "AI-assisted design audit tool",
   },
   {
-    name: PROJECT_NAMES.rayaLucaria,
+    id: PAGES.rayaLucaria,
+    name: PAGES.rayaLucaria,
     link: "/projects/raya-lucaria",
     className: "rayaLucaria",
     icon: RLsigil,
@@ -88,7 +98,8 @@ export const HOME_ANIM_DATA = [
 export type SelectedProject = (typeof HOME_ANIM_DATA)[number];
 
 export const INITIAL_SELECTED_PROJECT: SelectedProject = {
-  name: PROJECT_NAMES.home,
+  id: PAGES.home,
+  name: "",
   className: "",
   link: "",
   icon: "",
@@ -97,14 +108,15 @@ export const INITIAL_SELECTED_PROJECT: SelectedProject = {
 
 export const heroAnimMap = (name: SelectedProject["name"]) => {
   const map: Record<SelectedProject["name"], JSX.Element> = {
-    [PROJECT_NAMES.home]: <></>,
-    [PROJECT_NAMES.magnifi]: <MagHeroAnim homeAnim />,
-    [PROJECT_NAMES.tpm]: <TpmHeroAnim homeAnim />,
-    [PROJECT_NAMES.cloudwall]: <CloudwallHeroAnim homeAnim />,
-    [PROJECT_NAMES.niro]: <NiroHeroAnim homeAnim />,
-    [PROJECT_NAMES.rootedCompany]: <RootedCompanyHeroAnim homeAnim />,
-    [PROJECT_NAMES.orion]: <OrionHeroAnim homeAnim />,
-    [PROJECT_NAMES.rayaLucaria]: <RayaLucariaHeroAnim homeAnim />,
+    [PAGES.home]: <></>,
+    [PAGES.about]: <AboutPage />,
+    [PAGES.magnifi]: <MagHeroAnim homeAnim />,
+    [PAGES.tpm]: <TpmHeroAnim homeAnim />,
+    [PAGES.cloudwall]: <CloudwallHeroAnim homeAnim />,
+    [PAGES.niro]: <NiroHeroAnim homeAnim />,
+    [PAGES.rootedCompany]: <RootedCompanyHeroAnim homeAnim />,
+    [PAGES.orion]: <OrionHeroAnim homeAnim />,
+    [PAGES.rayaLucaria]: <RayaLucariaHeroAnim homeAnim />,
   };
 
   return map[name];

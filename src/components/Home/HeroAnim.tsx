@@ -26,10 +26,10 @@ function HeroAnim({ isMobile, selectedProject, setSelectedProject }: Props) {
               id={id}
               classList={{
                 circle: true,
+                default: selectedProject().name === "",
                 active:
-                  selectedProject().className === className
-                    ? selectedProject().className === className
-                    : selectedProject().className === "",
+                  selectedProject().className === className &&
+                  selectedProject().name !== "",
               }}
               {...(isMobile()
                 ? {
@@ -44,7 +44,6 @@ function HeroAnim({ isMobile, selectedProject, setSelectedProject }: Props) {
             >
               {icon === "" ? <Sig /> : <img src={icon} alt="" />}
 
-              {name}
               <span class="reverse">
                 <img src={icon} alt="" class="reverse" />
               </span>

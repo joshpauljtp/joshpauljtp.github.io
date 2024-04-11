@@ -76,9 +76,13 @@ main#rootedCompany {
     translate: -50% -50%;
   }
 
-  @media screen and (max-width: vars.$mobileBreakpoint) {
+  @media (max-width: vars.$mobileBreakpoint) {
     width: auto;
     height: min(100%, 108vw);
+
+    &.homeAnim {
+      width: auto;
+    }
   }
 }
 
