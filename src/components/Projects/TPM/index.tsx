@@ -3,6 +3,11 @@ import Snapshot from "../common/Snapshot";
 import HeroAnim from "./HeroAnim";
 import "./styles.scss";
 
+import Client from "@/assets/TPM/Client.png";
+import Home from "@/assets/TPM/Home.png";
+import Modals from "@/assets/TPM/Modals.png";
+import Order from "@/assets/TPM/Order.png";
+
 function TPM() {
   const title = "Tifin Private Markets";
   const subtitle = `“AI for your financial future”`;
@@ -52,7 +57,7 @@ function TPM() {
       <Snapshot {...snapshotProps}>
         <HeroAnim />
       </Snapshot>
-      <Gallery />
+      <Gallery images={[Home, Order, Modals, Client]} />
     </>
   );
 }

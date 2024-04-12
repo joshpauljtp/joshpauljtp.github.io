@@ -46,7 +46,6 @@ function HomePage() {
           ? { onClick: () => setSelectedProject(INITIAL_SELECTED_PROJECT) }
           : {})}
       >
-        {/* <Show when={!isMobile()}></Show> */}
         {heroAnimMap(selectedProject().id)}
       </aside>
       <Show when={selectedProject().name !== ""}>
