@@ -1,6 +1,8 @@
 @use "../../../../styles/variables" as vars;
 
 .snapshot {
+  min-height: calc(90dvh - var(--bodyHorizontalPadding));
+  margin-bottom: 5rem;
   display: grid;
   grid-template-columns: 25fr 32fr;
   grid-auto-rows: min-content;
@@ -34,6 +36,10 @@
     align-items: center;
     justify-content: center;
     align-self: center;
+  }
+
+  & > section {
+    z-index: 1;
   }
 
   @media screen and ((max-width: vars.$mobileBreakpoint)) {

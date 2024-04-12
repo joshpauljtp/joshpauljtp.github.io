@@ -111,6 +111,7 @@ main#home {
     grid-template-columns: max-content max-content;
     grid-template-areas: "title arrow" "subtitle arrow";
     align-items: center;
+    pointer-events: none;
 
     h3 {
       grid-area: title;
@@ -162,5 +163,9 @@ main#home {
         color: inherit;
       }
     }
+  }
+
+  #projectInfo {
+    pointer-events: initial;
   }
 }
