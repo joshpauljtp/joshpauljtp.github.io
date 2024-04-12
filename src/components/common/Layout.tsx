@@ -22,7 +22,7 @@ function Layout(props: Props) {
   const showNavbar = createMemo(() => !!id());
 
   return (
-    <main id={id() ?? "home"}>
+    <main id={id() ?? "home"} class={`colors-${id()}`}>
       {props.children}
       {showNavbar() && <Navbar />}
     </main>
