@@ -2,6 +2,12 @@ import Snapshot from "../common/Snapshot";
 import HeroAnim from "./HeroAnim";
 import "./styles.scss";
 
+import Intro from "@/assets/Cloudwall/Intro.png";
+import MobileMocks from "@/assets/Cloudwall/Mobile Mocks.png";
+import Nav from "@/assets/Cloudwall/Nav.png";
+import Values from "@/assets/Cloudwall/Values.png";
+import Gallery from "../common/Gallery";
+
 function Cloudwall() {
   const title = "Cloudwall Capital";
   const subtitle = "Risk platform technology provider";
@@ -23,9 +29,12 @@ function Cloudwall() {
   const snapshotProps = { title, subtitle, details, tech, responsibilities };
 
   return (
-    <Snapshot {...snapshotProps}>
-      <HeroAnim />
-    </Snapshot>
+    <>
+      <Snapshot {...snapshotProps}>
+        <HeroAnim />
+      </Snapshot>
+      <Gallery images={[Intro, Values, MobileMocks, Nav]} />
+    </>
   );
 }
 
