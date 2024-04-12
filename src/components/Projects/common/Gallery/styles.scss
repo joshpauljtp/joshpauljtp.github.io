@@ -1,12 +1,14 @@
+@use "../../../../styles/variables" as vars;
+
 #gallery {
   display: grid;
-  grid-template-columns: repeat(5, 192px);
+  grid-template-columns: repeat(5, minmax(auto, 192px));
   gap: 1rem;
 
   img {
     object-fit: cover;
     object-position: top;
-    height: 400px;
+    height: min(100%, 400px);
     background-image: linear-gradient(
       45deg,
       var(--fgColor) 10%,
@@ -19,7 +21,6 @@
     );
 
     background-size: 32px 32px;
-    // opacity: 0.5;
     background-repeat: repeat;
     border: 1px solid var(--fgColor);
     border-radius: 2rem;
@@ -50,13 +51,25 @@
           grid-column: span 2; // Span 2 columns for other elements
           animation-duration: 16s;
         }
+
+        @media screen and (max-width: #{vars.$mobileBreakpoint}) {
+          grid-column: span 5;
+        }
       }
+    }
+
+    &[src=""] {
+      height: 400px;
     }
 
     @keyframes backgroundPan {
       to {
         background-position: 100%;
       }
+    }
+
+    @media screen and (max-width: #{vars.$mobileBreakpoint}) {
+      height: auto;
     }
   }
 }
