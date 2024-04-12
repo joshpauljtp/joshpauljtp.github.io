@@ -25,7 +25,6 @@ main#home {
       translate: -50% -50%;
       aspect-ratio: 1;
       border-radius: 100%;
-      padding: 0.5rem;
       color: transparent;
       opacity: 0.15;
       font-size: 18px;
@@ -49,6 +48,13 @@ main#home {
         }
       }
 
+      img {
+        width: 1.5em;
+        height: 2em;
+        object-fit: contain;
+        object-position: center center;
+      }
+
       @for $i from 1 through $circleCount {
         &:nth-of-type(#{$i }) {
           cursor: pointer;
@@ -61,10 +67,6 @@ main#home {
           border: 3px solid black;
           box-shadow: inset 0 0 0px 36px nth($colors, $i),
             inset 0 0 0 39px black;
-
-          img {
-            width: 1.5em;
-          }
         }
       }
 
