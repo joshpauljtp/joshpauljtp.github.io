@@ -1,6 +1,11 @@
+import Gallery from "../common/Gallery";
 import Snapshot from "../common/Snapshot";
 import HeroAnim from "./HeroAnim";
 import "./styles.scss";
+
+import Icons from "@/assets/Niro/Icons.png";
+import Intro from "@/assets/Niro/Intro.gif";
+import MwebApp from "@/assets/Niro/Mweb App.png";
 
 function Niro() {
   const title = "Niro Money";
@@ -43,6 +48,7 @@ function Niro() {
       <Snapshot {...snapshotProps}>
         <HeroAnim />
       </Snapshot>
+      <Gallery images={[Intro, Icons, Icons, MwebApp]} />
     </>
   );
 }
