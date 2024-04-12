@@ -1,6 +1,12 @@
+import Gallery from "../common/Gallery";
 import Snapshot from "../common/Snapshot";
 import HeroAnim from "./HeroAnim";
 import "./styles.scss";
+
+import Collage from "@/assets/Orion/Collage.png";
+import Intro from "@/assets/Orion/Intro.png";
+import ProjectFlow from "@/assets/Orion/Project Flow.png";
+import ScoreCards from "@/assets/Orion/Score Cards.png";
 
 function Orion() {
   const title = "Orion";
@@ -35,9 +41,12 @@ function Orion() {
   };
 
   return (
-    <Snapshot {...snapshotProps}>
-      <HeroAnim />
-    </Snapshot>
+    <>
+      <Snapshot {...snapshotProps}>
+        <HeroAnim />
+      </Snapshot>
+      <Gallery images={[Intro, Collage, ScoreCards, ProjectFlow]} />
+    </>
   );
 }
 
