@@ -2,6 +2,12 @@ import Snapshot from "../common/Snapshot";
 import HeroAnim from "./HeroAnim";
 import "./styles.scss";
 
+import Home from "@/assets/Rooted Company/Home.png";
+import MobileNav from "@/assets/Rooted Company/MobileNav.png";
+import MobileVersus from "@/assets/Rooted Company/MobileVersus.png";
+import PDP from "@/assets/Rooted Company/PDP.png";
+import Gallery from "../common/Gallery";
+
 function RootedCompany() {
   const title = "Rooted Company";
   const subtitle = `Online boutique and publication`;
@@ -57,6 +63,7 @@ function RootedCompany() {
       <Snapshot {...snapshotProps}>
         <HeroAnim />
       </Snapshot>
+      <Gallery images={[Home, MobileVersus, MobileNav, PDP]} />
     </>
   );
 }
