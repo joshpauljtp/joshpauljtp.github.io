@@ -50,9 +50,16 @@ function HomePage() {
         {heroAnimMap(selectedProject().id)}
       </aside>
       <Show when={selectedProject().name !== ""}>
-        <div id="projectInfo">
-          <h3>{selectedProject().name}</h3>
-          <p>{selectedProject().subtitle}</p>
+        <div
+          id="projectInfo"
+          class={`projectInfo ${selectedProject().className} `}
+        >
+          <h3>
+            <strong>{selectedProject().name}</strong>
+          </h3>
+          <Show when={selectedProject().subtitle}>
+            <p>{selectedProject().subtitle}</p>
+          </Show>
           <Show when={selectedProject().link && isMobile()}>
             <A href={selectedProject().link}>
               <Arrow />

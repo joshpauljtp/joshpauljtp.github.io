@@ -120,6 +120,10 @@ main#home {
       grid-area: subtitle;
     }
 
+    &.about {
+      grid-template-areas: "title arrow" "title arrow";
+    }
+
     a {
       color: inherit;
       aspect-ratio: 1;
