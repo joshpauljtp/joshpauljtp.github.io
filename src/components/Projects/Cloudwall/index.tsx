@@ -13,8 +13,17 @@ function Cloudwall() {
   const subtitle = "Risk platform technology provider";
   const details = {
     Role: "Lead Frontend Developer",
-    Duration: `Dec '22`,
-    Team: "2 devs, 1 design, 1 product",
+    Duration: `Dec '21`,
+    Employer: "1stMain",
+    Link: (
+      <a
+        href="https://www.cloudwall.capital"
+        rel="noreferrer noopener"
+        target="_blank"
+      >
+        cloudwall.capital
+      </a>
+    ),
   };
   const tech = [
     "Gatsby",
@@ -32,9 +41,9 @@ function Cloudwall() {
       </p>
       <p>
         Though in a technical sense, there's nothing outstanding about this
-        project, it served as a valuable learning experience in leading the
-        development side, from working direclty with the client in creating and
-        iterating the site, to managing the team.
+        project, it served as a valuable learning experience in the leadership
+        aspect, from working direclty with the client in creating and iterating
+        the site, to managing the team.
       </p>
     </>
   );

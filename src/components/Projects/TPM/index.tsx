@@ -13,7 +13,17 @@ function TPM() {
   const subtitle = `Alternative investment platform`;
   const details = {
     Role: "Frontend Developer",
-    Duration: `Oct '22 - Present`,
+    Duration: `Feb '22 - Oct '22`,
+    Employer: "TIFIN",
+    Link: (
+      <a
+        href="https://app.tifinprivatemarkets.com"
+        rel="noreferrer noopener"
+        target="_blank"
+      >
+        app.tifinprivatemarkets.com
+      </a>
+    ),
   };
   const tech = [
     "Next.js",

@@ -20,7 +20,16 @@ function RayaLucaria() {
   const subtitle = "Visual narrative desktop experience";
   const details = {
     Role: "Developer, Designer",
-    Duration: `Aug '23 - Sep '23`,
+    Duration: `Oct '23 - Dec '23`,
+    Link: (
+      <a
+        href="https://raya-lucaria.vercel.app/"
+        rel="noreferrer noopener"
+        target="_blank"
+      >
+        raya-lucaria.vercel.app
+      </a>
+    ),
   };
   const tech = [
     "React",
@@ -50,6 +59,7 @@ function RayaLucaria() {
     details,
     tech,
     responsibilities,
+    descriptionTitle: "Summary",
   };
 
   return (

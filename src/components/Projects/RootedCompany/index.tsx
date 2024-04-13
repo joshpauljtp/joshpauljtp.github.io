@@ -14,6 +14,16 @@ function RootedCompany() {
   const details = {
     Role: "Junior Frontend Developer",
     Duration: `May '21 - Jun '21`,
+    Employer: "1stMain",
+    Link: (
+      <a
+        href="https://rootedcompany.co"
+        rel="noreferrer noopener"
+        target="_blank"
+      >
+        rootedcompany.co
+      </a>
+    ),
   };
   const tech = [
     "Next.js",

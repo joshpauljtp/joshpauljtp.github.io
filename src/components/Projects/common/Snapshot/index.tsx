@@ -10,6 +10,7 @@ type Props = {
   details: Record<DetailsKey, string>;
   tech: string[];
   responsibilities: string | JSX.Element;
+  descriptionTitle?: string;
   children: JSX.Element;
 };
 
@@ -46,6 +47,7 @@ function Snapshot({
   tech,
   details,
   responsibilities,
+  descriptionTitle = "Responsibilities",
   children,
 }: Props) {
   return (
@@ -57,7 +59,7 @@ function Snapshot({
       <Details {...details} />
       <Tech {...tech} />
       <section>
-        <h2>Responsibilities</h2>
+        <h2>{descriptionTitle}</h2>
         <p>{responsibilities}</p>
       </section>
       <figure>{children}</figure>

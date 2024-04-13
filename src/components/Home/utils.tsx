@@ -43,7 +43,7 @@ export const HOME_ANIM_DATA = [
     link: "/projects/magnifi",
     className: "magnifi",
     icon: Maglogo,
-    subtitle: "AI assisted trading platform",
+    subtitle: "GenAI trading platform",
   },
   {
     id: PAGES.tpm,
@@ -67,7 +67,7 @@ export const HOME_ANIM_DATA = [
     link: "/projects/niro",
     className: "niro",
     icon: Nirologo,
-    subtitle: "Marketing site and web app",
+    subtitle: "Marketing site and m-web app",
   },
   {
     id: PAGES.rootedCompany,
@@ -75,7 +75,7 @@ export const HOME_ANIM_DATA = [
     link: "/projects/rooted-company",
     className: "rootedCompany",
     icon: RClogo,
-    subtitle: "E-commerce web app",
+    subtitle: "E-commerce boutique and publication",
   },
   {
     id: PAGES.orion,

@@ -15,7 +15,17 @@ function Magnifi() {
   const subtitle = `GenAI Trading Platform`;
   const details = {
     Role: "Frontend Developer",
-    Duration: `Oct '22 - Present`,
+    Duration: `Nov '22 - Present`,
+    Employer: "TIFIN",
+    Link: (
+      <a
+        href="https://www.magnifi.com"
+        rel="noreferrer noopener"
+        target="_blank"
+      >
+        magnifi.com
+      </a>
+    ),
   };
   const tech = [
     "Next.js",
@@ -33,8 +43,9 @@ function Magnifi() {
   const responsibilities = (
     <>
       <p>
-        I own roughly 70% of the UI side of Magnifi, including it's Cart, PDP,
-        majority of its dynamic charts, and many more.
+        I own roughly 70% of the UI side of Magnifi, including it's Cart,
+        trading functionalities, realtime pricing integration, majority of its
+        dynamic charts, and many more.
       </p>
       <p>
         I've also created a robust core components for component composition,

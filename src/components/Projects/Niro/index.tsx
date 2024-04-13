@@ -13,6 +13,16 @@ function Niro() {
   const details = {
     Role: "Frontend Developer",
     Duration: `Aug '21 - Sep '21`,
+    Employer: "1stMain",
+    Link: (
+      <a
+        href="https://www.niro.money"
+        rel="noreferrer noopener"
+        target="_blank"
+      >
+        niro.money
+      </a>
+    ),
   };
   const tech = [
     "Gatsby",
