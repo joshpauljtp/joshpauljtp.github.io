@@ -1,5 +1,5 @@
+import NiroHero from "@/assets/Niro/NiroHero.gif";
 import { For, createEffect, onCleanup } from "solid-js";
-import NiroHero from "../../../assets/NiroHero.gif";
 import "./styles.scss";
 
 const AnimatedImage = () => {

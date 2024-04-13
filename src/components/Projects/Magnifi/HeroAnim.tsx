@@ -1,6 +1,6 @@
 import MagCard from "@/assets/Magnifi/MagCard.png";
+import MagHeroImage from "@/assets/Magnifi/MagHero.png";
 import { For } from "solid-js";
-import MagHeroImage from "../../../assets/MagHero.png";
 import "./styles.scss";
 
 type Props = {

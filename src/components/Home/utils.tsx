@@ -1,10 +1,10 @@
-import Cloudwalllogo from "@/assets/Cloudwall-Logo.svg";
-import Maglogo from "@/assets/Mag-Logo.svg";
-import Nirologo from "@/assets/Niro-Logo.svg";
-import OrionLogo from "@/assets/Orion-Logo.svg";
-import RClogo from "@/assets/RC-Logo.svg";
-import RLsigil from "@/assets/RL-Sigil.svg";
-import TPMlogo from "@/assets/TPM-Logo.svg";
+import Cloudwalllogo from "@/assets/Cloudwall/Cloudwall-Logo.svg";
+import Maglogo from "@/assets/Magnifi/Mag-Logo.svg";
+import Nirologo from "@/assets/Niro/Niro-Logo.svg";
+import OrionLogo from "@/assets/Orion/Orion-Logo.svg";
+import RLsigil from "@/assets/RayaLucaria/RL-Sigil.svg";
+import RClogo from "@/assets/Rooted Company/RC-Logo.svg";
+import TPMlogo from "@/assets/TPM/TPM-Logo.svg";
 import { JSX } from "solid-js";
 
 import AboutPage from "../About";

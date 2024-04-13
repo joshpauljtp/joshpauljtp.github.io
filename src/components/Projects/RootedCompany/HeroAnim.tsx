@@ -1,10 +1,10 @@
-import Sky1 from "../../../assets/RC-1.png";
-import Sky2 from "../../../assets/RC-2.png";
-import Sky3 from "../../../assets/RC-3.png";
-import Sky4 from "../../../assets/RC-4.png";
-import Sky5 from "../../../assets/RC-5.png";
-import Dune from "../../../assets/RC-Dune.png";
-import Stars from "../../../assets/RC-Stars.png";
+import Sky1 from "@/assets/Rooted Company/RC-1.png";
+import Sky2 from "@/assets/Rooted Company/RC-2.png";
+import Sky3 from "@/assets/Rooted Company/RC-3.png";
+import Sky4 from "@/assets/Rooted Company/RC-4.png";
+import Sky5 from "@/assets/Rooted Company/RC-5.png";
+import Dune from "@/assets/Rooted Company/RC-Dune.png";
+import Stars from "@/assets/Rooted Company/RC-Stars.png";
 import "./styles.scss";
 
 type Props = {

@@ -1,5 +1,5 @@
-import Logo from "../../../assets/RL-logo.svg";
-import Sigil from "../../../assets/RL-Sigil.svg";
+import Sigil from "@/assets/RayaLucaria/RL-Sigil.svg";
+import Logo from "@/assets/RayaLucaria/RL-logo.svg";
 import Background from "./Background/Background";
 import "./styles.scss";
 

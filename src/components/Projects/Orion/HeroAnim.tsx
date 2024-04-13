@@ -1,6 +1,6 @@
-import Dev from "../../../assets/OrionDev.svg";
-import Figma from "../../../assets/OrionFigma.svg";
-import OrionScale from "../../../assets/OrionScaleCenter.svg";
+import Dev from "@/assets/Orion/OrionDev.svg";
+import Figma from "@/assets/Orion/OrionFigma.svg";
+import OrionScale from "@/assets/Orion/OrionScaleCenter.svg";
 import "./styles.scss";
 
 type Props = {

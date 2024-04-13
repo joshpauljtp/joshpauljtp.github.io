@@ -1,5 +1,5 @@
-import CloudwallHero from "../../../assets/CloudwallHero.png";
-import CloudwallHeroPhone from "../../../assets/CloudwallHeroPhone.png";
+import CloudwallHero from "@/assets/Cloudwall/CloudwallHero.png";
+import CloudwallHeroPhone from "@/assets/Cloudwall/CloudwallHeroPhone.png";
 import "./styles.scss";
 
 type Props = {

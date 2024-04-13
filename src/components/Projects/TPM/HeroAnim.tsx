@@ -1,5 +1,5 @@
-import TpmLaptop from "@/assets/TPM-Laptop.png";
-import TpmLogo from "@/assets/TPM-Logo.svg";
+import TpmLaptop from "@/assets/TPM/TPM-Laptop.png";
+import TpmLogo from "@/assets/TPM/TPM-Logo.svg";
 import { Index } from "solid-js";
 import "./styles.scss";
 
