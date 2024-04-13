@@ -32,10 +32,15 @@ function RayaLucaria() {
   ];
   const responsibilities = (
     <>
-      Worked on Rooted Objects' rebrand into Rooted Company.
-      <br />
-      Worked on various article pages.
-      <br />
+      <p>
+        An homage to one of my favourite video games, "Elden Ring", and a side
+        project to explore visual and motion design, and creative programming.
+      </p>
+      <p>
+        One of the self-imposed challenges for this project was to avoid using
+        third-party animation libraries, and to handcraft the animations myself
+        using CSS and the built-in Web Animations API.
+      </p>
     </>
   );
 

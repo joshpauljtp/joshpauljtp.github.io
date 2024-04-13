@@ -24,7 +24,20 @@ function Cloudwall() {
     "Bootstrap",
   ];
 
-  const responsibilities = `Led UI development for Cloudwall's marketing website, which served as their digital foothold into launching their company. Set up Github actions along with Sanity CMS to trigger CI/CD to minimize agency dependancy.`;
+  const responsibilities = (
+    <>
+      <p>
+        Cloudwall Capital's marketing site was the first project I was tasked
+        with a lead development role.
+      </p>
+      <p>
+        Though in a technical sense, there's nothing outstanding about this
+        project, it served as a valuable learning experience in leading the
+        development side, from working direclty with the client in creating and
+        iterating the site, to managing the team.
+      </p>
+    </>
+  );
 
   const snapshotProps = { title, subtitle, details, tech, responsibilities };
 

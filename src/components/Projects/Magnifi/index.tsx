@@ -12,7 +12,7 @@ import Treemap from "@/assets/Magnifi/Treemap.png";
 
 function Magnifi() {
   const title = "Magnifi";
-  const subtitle = `“AI for your financial future”`;
+  const subtitle = `GenAI Trading Platform`;
   const details = {
     Role: "Frontend Developer",
     Duration: `Oct '22 - Present`,
@@ -32,21 +32,21 @@ function Magnifi() {
   ];
   const responsibilities = (
     <>
-      I'm currently working on Magnifi, working directly with product, design,
-      backend and QA teams in creating numerous features for users - including
-      dynamic charts, realtime data parsing, etc.
-      <br />
-      Jointly led UI development of rebrand/refactor of Magnifi, moving from a
-      CRA codebase to Next.js, increasing performance by x% and user traffic by
-      x%.
-      <br />
-      Led UI development of Franklin Templeton partner site - a unique slice of
-      the Magnifi universe, for select Franklin Templeton customers.
-      <br />
-      Crafted robust core components for component composition, and dynamic
-      theming systems for handling styling of colours, typography, breakpoints,
-      etc.
-      <br />
+      <p>
+        I own roughly 70% of the UI side of Magnifi, including it's Cart, PDP,
+        majority of its dynamic charts, and many more.
+      </p>
+      <p>
+        I've also created a robust core components for component composition,
+        and dynamic theming systems for handling styling of colours, typography,
+        breakpoints, etc.
+      </p>
+      <p>
+        Over the time I've spent working on Magnifi, I've worked directly with
+        various stakeholders in creating many of these features, delivered in
+        record time as MVPs, to later providing maintenance and scalability
+        support.
+      </p>
     </>
   );
 

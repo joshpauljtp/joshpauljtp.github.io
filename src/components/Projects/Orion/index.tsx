@@ -25,10 +25,15 @@ function Orion() {
   ];
   const responsibilities = (
     <>
-      Worked on Rooted Objects' rebrand into Rooted Company.
-      <br />
-      Worked on various article pages.
-      <br />
+      <p>
+        Orion is a POC, created in 2 days, and ultimately the winner of TIFIN's
+        AI Hackathon in 2023.
+      </p>
+      <p>Somthign about Orion here</p>
+      <p>
+        In addition to its development, I helped with its designs, from the
+        basic UX flow, to aiding in its visual design style guide.
+      </p>
     </>
   );
 

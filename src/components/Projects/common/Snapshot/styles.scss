@@ -12,6 +12,10 @@
     "responsibilities heroAnim";
   gap: 1.25rem 7rem;
 
+  p + p {
+    margin-top: 0.5em;
+  }
+
   .detail {
     display: flex;
     align-items: center;

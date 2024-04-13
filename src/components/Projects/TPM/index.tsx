@@ -10,7 +10,7 @@ import Order from "@/assets/TPM/Order.png";
 
 function TPM() {
   const title = "Tifin Private Markets";
-  const subtitle = `“AI for your financial future”`;
+  const subtitle = `Alternative investment platform`;
   const details = {
     Role: "Frontend Developer",
     Duration: `Oct '22 - Present`,
@@ -30,17 +30,21 @@ function TPM() {
   ];
   const responsibilities = (
     <>
-      I'm currently working on Magnifi, working directly with product, design,
-      backend and QA teams in creating numerous features for users - including
-      dynamic charts, realtime data parsing, etc.
-      <br />
-      Jointly led UI development of rebrand/refactor of Magnifi, moving from a
-      CRA codebase to Next.js, increasing performance by x% and user traffic by
-      x%.
-      <br />
-      Led UI development of Franklin Templeton partner site - a unique slice of
-      the Magnifi universe, for select Franklin Templeton customers.
-      <br />
+      <p>
+        In a team of 3 FE developers, we took Qualis Capital from an Angular
+        codebase to a React codebase, massively increaasing its performance,
+        later being renamed to Tifin Private Markets.
+      </p>
+      <p>
+        I was responsible for all of TPM's UI styling. When I wasn't working on
+        end-to-end features, I was tasked with making a styling pass on the
+        other devs' unstyled features.
+      </p>
+      <p>
+        I also created a robust core components for component composition, and
+        dynamic theming systems for handling styling of colours, typography,
+        breakpoints, etc.
+      </p>
     </>
   );
 
