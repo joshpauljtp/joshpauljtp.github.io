@@ -66,6 +66,7 @@ main#rootedCompany {
   #dune {
     translate: -50% 25%;
     animation: duneAnim 3000ms ease-out forwards;
+    z-index: 2;
   }
 
   &.homeAnim {
