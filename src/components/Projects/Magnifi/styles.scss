@@ -26,6 +26,8 @@ main#magnifi {
     box-shadow: inset 0 0 40px;
     clip-path: polygon(12.05% 0, 100% 0%, 100% 100%, 0 100%, 0 12.31%);
     scale: 0;
+    will-change: scale;
+    transform: translateZ(0);
 
     $animDuration: 16000;
 
