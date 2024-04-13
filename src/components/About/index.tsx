@@ -15,12 +15,12 @@ const LINKS = [
     url: "https://www.linkedin.com/in/joshpauljtp/",
   },
   {
-    name: "Github",
-    url: "https://github.com/JoshTPaul",
-  },
-  {
     name: "Email",
     url: "mailto:joshpauljtp@gmail.com",
+  },
+  {
+    name: "Github",
+    url: "https://github.com/JoshTPaul",
   },
 ];
 
