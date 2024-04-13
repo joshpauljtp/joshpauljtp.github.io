@@ -23,10 +23,6 @@ main#magnifi {
     translate: -50% -50%;
     width: 512px;
     aspect-ratio: 128/111;
-    color: #c6a46b;
-    background-color: rgba($color: #000000, $alpha: 0);
-    box-shadow: inset 0 0 40px;
-    // clip-path: polygon(12.05% 0, 100% 0%, 100% 100%, 0 100%, 0 12.31%);
     scale: 0;
     will-change: scale;
     transform: translate3d(0, 0, 0);
@@ -34,16 +30,6 @@ main#magnifi {
     $animDuration: 16000;
 
     animation: magCardScale #{$animDuration}ms infinite linear;
-
-    &::before {
-      content: "";
-      display: block;
-      rotate: -42deg;
-      width: 100px;
-      height: 10%;
-      translate: -50%;
-      box-shadow: 0 0 40px;
-    }
 
     @for $i from 0 through 7 {
       &:nth-child(#{$i + 1}) {
