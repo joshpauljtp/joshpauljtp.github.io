@@ -2,7 +2,8 @@
 @use "../../styles/variables" as vars;
 
 $circleCount: 8;
-$animDuration: 8000;
+$animDuration: 1800;
+$ease: cubic-bezier(0.25, 1, 0.5, 1);
 
 main#home {
   place-items: center;
@@ -31,6 +32,7 @@ main#home {
       font-weight: 500;
       $colors: var(--home), var(--magnifi), var(--tpm), var(--cloudwall),
         var(--niro), var(--rootedCompany), var(--orion), var(--rayaLucaria);
+      scale: 0;
 
       .reverse {
         scale: -1;
@@ -58,8 +60,10 @@ main#home {
       @for $i from 1 through $circleCount {
         &:nth-of-type(#{$i }) {
           cursor: pointer;
-          $delay: $animDuration - math.div($animDuration, $circleCount) * $i;
-          $spinDelay: 60 * $i + $animDuration;
+          $delayModifier: $i - 2;
+          $delay: $animDuration * math.div($delayModifier, $circleCount);
+          animation: growCircle #{$animDuration}ms forwards $ease;
+          animation-delay: #{$delay}ms;
 
           z-index: #{$circleCount - $i + 1};
           background-color: transparent;
@@ -73,6 +77,8 @@ main#home {
       &#about-circle {
         justify-content: center;
         color: black;
+        animation: unset;
+        scale: 1;
 
         .reverse {
           display: none;
@@ -81,6 +87,12 @@ main#home {
         svg {
           width: 3.25em;
           height: 3.125em;
+        }
+      }
+
+      @keyframes growCircle {
+        to {
+          scale: 1;
         }
       }
     }
