@@ -13,6 +13,8 @@ main#magnifi {
   aspect-ratio: 128/111;
   overflow: hidden;
   clip-path: polygon(12.05% 0, 100% 0%, 100% 100%, 0 100%, 0 12.31%);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 
   .magCard {
     position: absolute;
